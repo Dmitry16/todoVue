@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <TodoMain msg="Welcome to the Todo App"/>
+    <h3>{{ msg }}</h3>
+    <TodoMain msg="All Todos:"/>
   </div>
 </template>
 
@@ -11,6 +12,15 @@ import TodoMain from '@/components/TodoMain.vue'
 
 export default {
   name: 'home',
+    data() {
+      return {
+          todos: [
+              { name: "master vue", completed: false },
+              { name: "master node", completed: false }
+          ],
+          msg: "Wellcome to the awsome Todo App!"
+      }
+    },
   components: {
     TodoMain
   }
